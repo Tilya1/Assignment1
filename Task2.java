@@ -2,6 +2,12 @@ import java.util.Scanner;
 
 public class Task2 {
 
+    public static void readArray(Scanner sc, int[] arr, int i) {
+        if (i == arr.length) return;
+        arr[i] = sc.nextInt();
+        readArray(sc, arr, i + 1);
+    }
+
     public static int sum(int[] arr, int index) {
         if (index == arr.length) {
             return 0;
@@ -17,11 +23,5 @@ public class Task2 {
         double avg = (double) sum(arr, 0) / n;
         System.out.println(avg);
         sc.close();
-    }
-
-    public static void readArray(Scanner sc, int[] arr, int i) {
-        if (i == arr.length) return;
-        arr[i] = sc.nextInt();
-        readArray(sc, arr, i + 1);
     }
 }
